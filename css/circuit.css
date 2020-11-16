@@ -19,16 +19,14 @@ svg path {
   stroke-dasharray: 10000;
   stroke-dashoffset: 0;
   fill: none;
-  animation: connect 3500ms;
-  animation-timing-function: 'easeInCubic';
+  animation: connect 3000ms linear;
 }
 
 svg circle.cup {
   stroke: #494e55;
   stroke-width: 3px;
   fill: #2c3334;
-  animation: cupHint 5s infinite;
-  animation-timing-function: linear;
+  animation: connect 3000ms linear, cupHint 5s linear infinite;
 }
 
 svg .spark {
@@ -37,11 +35,16 @@ svg .spark {
 }
 
 @keyframes connect {
-  from {
+  0% {
     stroke-dashoffset: 10000;
+    stroke: #bbc2c2;
   }
-  to {
+  80% {
     stroke-dashoffset: 0;
+    stroke: #bbc2c2;
+  }
+  100% {
+    stroke: #494e55;
   }
 }
 
