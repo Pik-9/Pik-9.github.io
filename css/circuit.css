@@ -1,0 +1,49 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #2c3334;
+}
+
+svg#circuitboard {
+  width: 100%;
+  height: 150vh;
+  margin: 0;
+  padding: 0;
+}
+
+svg path {
+  stroke: #494e55;
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-linejoin: miter;
+  stroke-dasharray: 10000;
+  stroke-dashoffset: 0;
+  fill: none;
+  animation: connect 3500ms;
+  animation-timing-function: 'easeInCubic';
+}
+
+svg circle.cup {
+  stroke: #494e55;
+  stroke-width: 3px;
+  fill: #2c3334;
+}
+
+svg .spark {
+  stroke: none;
+  fill: cyan;
+}
+
+@keyframes connect {
+  from {
+    stroke-dashoffset: 10000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes walkAlong {
+  0% { offset-distance: 0; }
+  100% { offset-distance: 100%; }
+}

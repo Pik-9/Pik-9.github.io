@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.back {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  padding: 0;
+  margin: 0;
+}
+
+#brickwall {
+  position: fixed;
+  padding: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.tilerow {
+  display: flex;
+  flex-wrap: row;
+  justify-content: space-evenly;
+}
+
+.tile {
+  min-width: 100px;
+  min-height: 100px;
+  padding: 0;
+  margin: 5px;
+  cursor: pointer;
+  box-shadow: 4px 4px 5px 3px cyan;
+  background: linear-gradient(to right top, #555, #aaa);
+}
+
+.tile:hover {
+  transform: scale(1.05);
+}
