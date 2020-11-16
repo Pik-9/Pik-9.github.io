@@ -27,6 +27,8 @@ svg circle.cup {
   stroke: #494e55;
   stroke-width: 3px;
   fill: #2c3334;
+  animation: cupHint 5s infinite;
+  animation-timing-function: linear;
 }
 
 svg .spark {
@@ -46,4 +48,19 @@ svg .spark {
 @keyframes walkAlong {
   0% { offset-distance: 0; }
   100% { offset-distance: 100%; }
+}
+
+@keyframes cupHint {
+  0% {
+    r: 15px;
+  }
+  94% {
+    r: 15px;
+  }
+  97% {
+    r: 20px;
+  }
+  100% {
+    r: 15px;
+  }
 }
