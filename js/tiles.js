@@ -18,36 +18,36 @@ export default function fillWithTiles(wallId, doneCallback) {
     wall.appendChild(trow);
   }
 
-  let growAnimation;
-  const grow = () => {
-    const rainbow = ['red', 'green', 'blue'];
-    growAnimation = anime({
+  let glowAnimation;
+  const glow = () => {
+    glowAnimation = anime({
       targets: '.tile',
       'box-shadow': [
         {
-          duration: () => anime.random(0, 10000),
-          value: 1.0,
+          duration: 0,
+          value: '4px 4px 5px 3px rgba(0, 0, 127, 1.0)',
         },
         {
-          duration: 1000,
-          value: () => `4px 4px 5px 3px ${rainbow[anime.random(0, 3)]}`,
-          easing: 'linear',
+          duration: 250,
+          value: '4px 4px 5px 3px rgba(0, 0, 255, 1.0)',
         },
         {
-          duration: 1000,
-          easing: 'linear',
-          value: '4px 4px 5px 3px cyan',
+          duration: 400,
+          value: '4px 4px 5px 3px rgba(0, 0, 127, 1.0)',
+          easing: 'easeOutBounce',
         },
       ],
-      complete: grow,
+      delay: anime.stagger(100, { grid: [countX, countY], from: anime.random(0, tiles.length) }),
+      complete: glow,
     });
+    console.log('Glowing.');
   };
-  grow();
+  glow();
 
   tiles.forEach((tile, index) => {
     tile.addEventListener('click', (event) => {
-      growAnimation.pause();
-      growAnimation.seek(0);
+      glowAnimation.seek(0);
+      glowAnimation.pause();
       anime({
         targets: '.tile',
         scale: [1.0, 2.5],
