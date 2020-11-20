@@ -1,5 +1,14 @@
+@font-face {
+  font-family: 'DataControl';
+  src: url('/res/data-latin.ttf') format('truetype');
+}
+
 main {
   z-index: 2;
+}
+
+h2 {
+  font-family: 'DataControl', Sans-Serif;
 }
 
 .frontpage {
