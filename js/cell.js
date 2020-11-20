@@ -75,9 +75,6 @@ export default class Cell {
       const svgPath = svg.path(randomPath);
       const tt = Math.floor(1000 * svgPath.length() / sparkSpeed);
       svgPath.remove();
-      //const spark = svg.polygon('24,24 15,21 08,26 08,17 0,12 09,09 12,0 17,08 26,08 21,15')
-      //const spark = svg.polygon('20,20 20,-20 -20,-20 -20,20')
-      //const spark = svg.ellipse(10, 10)
       const spark = svg.polygon('16.0,0.0 6.5,4.7 4.9,15.2 -2.5,7.6 -12.9,9.4 -8.0,0.0 -12.9,-9.4 -2.5,-7.6 4.9,-15.2 6.5,-4.7')
         .addClass('spark')
         .attr('filter', 'url(\'#blur\')')

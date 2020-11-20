@@ -40,7 +40,6 @@ export default function fillWithTiles(wallId, doneCallback) {
       delay: anime.stagger(100, { grid: [countX, countY], from: anime.random(0, tiles.length) }),
       complete: glow,
     });
-    console.log('Glowing.');
   };
   glow();
 
