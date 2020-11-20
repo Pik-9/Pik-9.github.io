@@ -14,12 +14,22 @@ export default function drawCircuit(svgId) {
 
   /* Draw the paths. */
   const pathGroup = svg.group();
+  let samplePath;
   paths.forEach((path) => {
-    pathGroup.path(path);
+    const svgPath = pathGroup.path(path);
+    if(!samplePath) {
+      samplePath = svgPath;
+    }
   });
 
   /* Draw the end cups of the circuit. */
   maze.getFinishNodes().forEach((node) => {
     node.createCup(svg, pathGroup);
+  });
+
+  return new Promise((resolve, reject) => {
+    samplePath.on('animationend', () => {
+      resolve();
+    });
   });
 }

@@ -1,6 +1,6 @@
 import anime from 'https://cdn.jsdelivr.net/npm/animejs@3/lib/anime.es.js';
 
-export default function fillWithTiles(wallId, doneCallback) {
+export default function fillWithTiles(wallId) {
   const wall = document.getElementById(wallId);
   const countX = Math.floor(wall.clientWidth / 105.0);
   const countY = Math.ceil(window.innerHeight / 105.0);
@@ -43,20 +43,22 @@ export default function fillWithTiles(wallId, doneCallback) {
   };
   glow();
 
-  tiles.forEach((tile, index) => {
-    tile.addEventListener('click', (event) => {
-      glowAnimation.seek(0);
-      glowAnimation.pause();
-      anime({
-        targets: '.tile',
-        scale: [1.0, 2.5],
-        opacity: [1.0, 0.0],
-        delay: anime.stagger(200, {grid: [countX, countY], from: index}),
-        easing: 'easeOutCubic',
-        complete: () => {
-          wall.style.display = 'none';
-          doneCallback();
-        },
+  return new Promise((resolve, reject) => {
+    tiles.forEach((tile, index) => {
+      tile.addEventListener('click', (event) => {
+        glowAnimation.seek(0);
+        glowAnimation.pause();
+        anime({
+          targets: '.tile',
+          scale: [1.0, 2.5],
+          opacity: [1.0, 0.0],
+          delay: anime.stagger(200, {grid: [countX, countY], from: index}),
+          easing: 'easeOutCubic',
+          complete: () => {
+            wall.style.display = 'none';
+            resolve();
+          },
+        });
       });
     });
   });
