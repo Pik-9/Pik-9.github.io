@@ -1,0 +1,85 @@
+main {
+  z-index: 2;
+}
+
+.frontpage {
+  display: flex;
+  position: relative;
+  box-sizing: content-box;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100vh;
+}
+
+.frontsymbol {
+  margin: auto;
+  z-index: 3;
+}
+
+svg.animated path {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+}
+
+.frame {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: auto;
+  margin-bottom: 40vh;
+  padding: 0;
+}
+
+.frame:last-of-type {
+  margin-bottom: 60vh;
+}
+
+.frameback {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.framefront {
+  display: flex;
+  position: relative;
+  z-index: 2;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.invisiblefront {
+  display: none;
+}
+
+.invisibleatstart {
+  display: none;
+}
+
+.frameitem {
+  padding: 20px;
+  min-width: 200px;
+}
+
+.frameback svg {
+  width: 100%;
+  height: 100%;
+}
+
+.frameback svg path {
+  fill: #2c3334;
+  stroke-width: 3px;
+}
+
+@media only screen and (min-width: 800px) {
+  .frame {
+    width: 650px;
+  }
+  
+  .framefront {
+    justify-content: space-evenly;
+  }
+}
