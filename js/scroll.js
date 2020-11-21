@@ -78,8 +78,26 @@ function createAnimationCallback(frameDiv) {
 }
 
 function frontPageAnimation() {
-  const lightSwitchAnimations = [];
-  document.querySelectorAll('.animated path').forEach((path) => {
+  const spadesLogo = document.getElementById('SpadesLogo');
+
+  const lightSwitchAnimations = [
+    anime({
+      targets: '#SpadesLogo path',
+      delay: () => anime.random(500, 10000),
+      duration: 300,
+      direction: 'alternate',
+      loop: true,
+      autoplay: false,
+      stroke: 'rgba(40, 40, 40, 1)',
+      changeBegin: (animation) => {
+        spadesLogo.style.filter = 'none';
+      },
+      changeComplete: (animation) => {
+        spadesLogo.style.filter = 'drop-shadow(3px 4px 10px magenta)';
+      },
+    }),
+  ];
+  document.querySelectorAll('#SpadesText path').forEach((path) => {
     lightSwitchAnimations.push(anime({
       targets: path,
       delay: () => anime.random(500, 10000),

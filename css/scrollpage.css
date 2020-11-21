@@ -25,6 +25,10 @@ h2 {
   z-index: 3;
 }
 
+svg#SpadesLogo {
+  filter: drop-shadow(3px 4px 10px magenta);
+}
+
 svg.animated path {
   stroke-dasharray: 2000;
   stroke-dashoffset: 2000;

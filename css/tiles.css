@@ -19,7 +19,6 @@
 
 .tilerow {
   display: flex;
-  flex-wrap: row;
   justify-content: space-evenly;
 }
 
