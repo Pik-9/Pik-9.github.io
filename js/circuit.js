@@ -1,3 +1,14 @@
+/******************************************************************************
+ * Copyright (C) 2020 Daniel Steinhauer                                       *
+ *                                                                            *
+ * This functions draws a randomly generated circuit onto a SVG element.      *
+ *                                                                            *
+ * @summary A function to draw a svg circuit.                                 *
+ * @author Daniel Steinhauer                                                  *
+ *                                                                            *
+ * @license AGPL-3.0-or-later                                                 *
+ ******************************************************************************/
+
 import Maze from './maze.js';
 import { pickRandomly } from './utils.js';
 import { SVG } from 'https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.0.16/svg.esm.js';

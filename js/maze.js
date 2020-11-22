@@ -1,3 +1,14 @@
+/******************************************************************************
+ * Copyright (C) 2020 Daniel Steinhauer                                       *
+ *                                                                            *
+ * Represents a maze of interconnected cells in a hexagonal grid.             *
+ *                                                                            *
+ * @summary The maze of cells.                                                *
+ * @author Daniel Steinhauer                                                  *
+ *                                                                            *
+ * @license AGPL-3.0-or-later                                                 *
+ ******************************************************************************/
+
 import Cell from './cell.js';
 import { pickRandomly } from './utils.js';
 

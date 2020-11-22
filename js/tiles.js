@@ -1,3 +1,14 @@
+/******************************************************************************
+ * Copyright (C) 2020 Daniel Steinhauer                                       *
+ *                                                                            *
+ * Function to fill a div with tiles and apply the effects.                   *
+ *                                                                            *
+ * @summary Fill a div with tiles and their animations.                       *
+ * @author Daniel Steinhauer                                                  *
+ *                                                                            *
+ * @license AGPL-3.0-or-later                                                 *
+ ******************************************************************************/
+
 import anime from 'https://cdn.jsdelivr.net/npm/animejs@3/lib/anime.es.js';
 
 export default function fillWithTiles(wallId) {

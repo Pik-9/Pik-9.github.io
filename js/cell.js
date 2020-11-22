@@ -1,3 +1,15 @@
+/******************************************************************************
+ * Copyright (C) 2020 Daniel Steinhauer                                       *
+ *                                                                            *
+ * Represents a single cell in a hexagonal maze of cells.                     *
+ * It saves all incoming and outgoing connections to other cells.             *
+ *                                                                            *
+ * @summary A single cell.                                                    *
+ * @author Daniel Steinhauer                                                  *
+ *                                                                            *
+ * @license AGPL-3.0-or-later                                                 *
+ ******************************************************************************/
+
 import { pickRandomly } from './utils.js';
 
 const cellWidth = 50;
