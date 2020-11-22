@@ -12,10 +12,25 @@
 
 import { pickRandomly } from './utils.js';
 
+/**
+ * The width in pixels of every cell in the maze.
+ */
 const cellWidth = 50;
+
+/**
+ * The speed a spark should travel along a path with.
+ */
 const sparkSpeed = 500.0;
 
+/**
+ * @class Represents a single cell in the circuit maze.
+ */
 export default class Cell {
+  /**
+   * @constructor
+   * @param x the x coordinate of the cell in the hexagonal grid.
+   * @param y the y coordinate of the cell in the hexagonal grid.
+   */
   constructor(x, y) {
     this.x = x;
     this.y = y;
@@ -23,10 +38,23 @@ export default class Cell {
     this.outgoing = [];
   }
 
+  /**
+   * Is this cell still free to walk to while maze generation?
+   *
+   * A cell is considered free if there are no paths going into or
+   * coming out of it.
+   *
+   * @return status.
+   */
   isFree() {
     return (this.ingoing.length === 0 && this.outgoing.length === 0);
   }
 
+  /**
+   * Get the true pixel coordinates from this hexagonal grid.
+   *
+   * @return object with x and y coordinate of the center on a svg.
+   */
   getCenterPoint() {
     /**
      * We use a hexagonal grid.
@@ -38,6 +66,12 @@ export default class Cell {
     };
   }
 
+  /**
+   * Get an array of paths (strings) that represent all available routes out of this cell.
+   *
+   * @param origin a boolean that determines whether this is the first cell that it is called on.
+   * @return [string, ...] all available paths out of this cell.
+   */
   getPathsToSuccessors(origin) {
     const center = this.getCenterPoint();
     const here = `${center.x} ${center.y}`;
@@ -60,6 +94,11 @@ export default class Cell {
     return ret;
   }
 
+  /**
+   * Get one path to another randomly chosen endpoint.
+   *
+   * @param originCell the cell that this method was called from recursively.
+   */
   getRandomPath(originCell) {
     const conns = this.outgoing.concat(this.ingoing).filter(
       (cell) => cell != originCell
@@ -77,6 +116,9 @@ export default class Cell {
    * Draw a cup on the end of a wire.
    *
    * Only call this method on real cups.
+   *
+   * @param svg The SVG.JS instance.
+   * @param svgGroup the SVG group that the elements should be part of.
    */
   createCup(svg, svgGroup) {
     const posi = this.getCenterPoint();

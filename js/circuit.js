@@ -13,6 +13,12 @@ import Maze from './maze.js';
 import { pickRandomly } from './utils.js';
 import { SVG } from 'https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.0.16/svg.esm.js';
 
+/**
+ * Draws a circuit maze onto a given svg element.
+ *
+ * @param svgId the selector (string) that identifies the svg in the DOM.
+ * @return a promise that resolves once all animations have finished.
+ */
 export default function drawCircuit(svgId) {
   const svg = SVG(svgId);
   const xCells = Math.floor(svg.node.clientWidth / 50.0);

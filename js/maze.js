@@ -12,7 +12,16 @@
 import Cell from './cell.js';
 import { pickRandomly } from './utils.js';
 
+/**
+ * Represents a maze of interconnected cells that becomes the circuit to draw.
+ */
 export default class Maze {
+  /**
+   * @constructor
+   *
+   * @param width The width of the hexagonal grid in number of cells.
+   * @param height The height of the hexagonal grid in number of cells.
+   */
   constructor(width, height) {
     this.width = width;
     this.height = height;
@@ -30,6 +39,14 @@ export default class Maze {
     this.create();
   }
 
+  /**
+   * Get an array of all neighboring cells in a hexagonal grid.
+   *
+   * @param x the x coordinate of the cell in hexagonal coordinates.
+   * @param y the y coordinate of the cell in hexagonal coordinates.
+   *
+   * @return an array of max. six cells.
+   */
   getNeighbors(x, y) {
     const ret = [];
     /**
@@ -68,6 +85,9 @@ export default class Maze {
     return ret;
   }
 
+  /**
+   * Algorithm to create a maze through the grid of cells.
+   */
   create() {
     this.startingCell = pickRandomly(pickRandomly(this.grid));
     let path = [ this.startingCell ];
@@ -87,6 +107,9 @@ export default class Maze {
     }
   }
 
+  /**
+   * Get all the nodes that are dead ends i.e. which have 1 way in and 0 ways out or vice versa.
+   */
   getFinishNodes() {
     return this.cells.filter((cell) => cell.ingoing.length + cell.outgoing.length === 1);
   }

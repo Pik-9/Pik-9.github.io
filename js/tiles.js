@@ -11,6 +11,12 @@
 
 import anime from 'https://cdn.jsdelivr.net/npm/animejs@3/lib/anime.es.js';
 
+/**
+ * Fill a given div with tiles.
+ *
+ * @param wallId the id (string) which identifies the div in the DOM.
+ * @return a promise that resolves, once a tile has been clicked and all animations finished.
+ */
 export default function fillWithTiles(wallId) {
   const wall = document.getElementById(wallId);
   const countX = Math.floor(wall.clientWidth / 105.0);
