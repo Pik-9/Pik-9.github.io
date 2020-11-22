@@ -17,7 +17,7 @@ footer {
   padding-right: 5px;
 }
 
-h2 {
+h2,h3 {
   font-family: 'DataControl', Sans-Serif;
 }
 
@@ -72,6 +72,12 @@ svg.animated path {
   z-index: 2;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+}
+
+.framefront img {
+  margin: 0;
+  padding: 0;
 }
 
 .invisiblefront {
@@ -83,7 +89,7 @@ svg.animated path {
 }
 
 .frameitem {
-  padding: 20px;
+  padding: 5px;
   min-width: 200px;
 }
 
