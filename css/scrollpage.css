@@ -53,9 +53,14 @@ svg#SpadesLogo {
   filter: drop-shadow(3px 4px 10px magenta);
 }
 
-svg.animated path {
+svg#SpadesLogo path {
   stroke-dasharray: 2000;
   stroke-dashoffset: 2000;
+}
+
+svg#SpadesText path {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
 }
 
 .frame {

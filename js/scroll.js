@@ -171,9 +171,9 @@ function frontPageAnimation() {
     duration: 1000,
   }).add({
     targets: '#SpadesText path',
-    strokeDashoffset: [2000, 0],
-    duration: 200,
-    delay: anime.stagger(200),
+    strokeDashoffset: [200, 0],
+    duration: 300,
+    delay: anime.stagger(150),
   }).finished.then(() => {
     lightSwitchAnimations.forEach((animation) => {
       animation.play();
