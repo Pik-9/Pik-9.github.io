@@ -151,7 +151,27 @@ function frontPageAnimation() {
       },
     }),
   ];
-  document.querySelectorAll('#SpadesText path').forEach((path) => {
+
+  /** The filters to apply to the neon letters in the right order. */
+  const filters = [
+    'url(#shadow-green)',
+    'url(#shadow-red)',
+    'url(#shadow-blue)',
+    'url(#shadow-cyan)',
+    'url(#shadow-yellow)',
+    'url(#shadow-magenta)',
+    'url(#shadow-red)',
+    'url(#shadow-magenta)',
+    'url(#shadow-yellow)',
+    'url(#shadow-green)',
+    'url(#shadow-blue)',
+    'url(#shadow-cyan)',
+    'url(#shadow-green)',
+    'url(#shadow-red)',
+    'url(#shadow-blue)',
+  ];
+
+  document.querySelectorAll('#SpadesText path').forEach((path, index) => {
     lightSwitchAnimations.push(anime({
       targets: path,
       delay: () => anime.random(500, 10000),
@@ -160,6 +180,12 @@ function frontPageAnimation() {
       loop: true,
       autoplay: false,
       stroke: 'rgba(40, 40, 40, 1)',
+      changeBegin: (animation) => {
+        path.style.filter = 'none';
+      },
+      changeComplete: (animation) => {
+        path.style.filter = filters[index];
+      },
     }));
   });
 

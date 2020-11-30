@@ -77,22 +77,42 @@
 
         <div class="frontsymbol">
           <svg id="SpadesText" height=60 width=300 viewBox="0 0 300 60">
+            <defs>
+              <filter id="shadow-red">
+                <feDropShadow dx="3" dy="2" stdDeviation="4" flood-color="#f00" />
+              </filter>
+              <filter id="shadow-green">
+                <feDropShadow dx="3" dy="2" stdDeviation="4" flood-color="#0f0" />
+              </filter>
+              <filter id="shadow-blue">
+                <feDropShadow dx="3" dy="2" stdDeviation="4" flood-color="#00f" />
+              </filter>
+              <filter id="shadow-cyan">
+                <feDropShadow dx="3" dy="2" stdDeviation="4" flood-color="#0ff" />
+              </filter>
+              <filter id="shadow-magenta">
+                <feDropShadow dx="3" dy="2" stdDeviation="4" flood-color="#f0f" />
+              </filter>
+              <filter id="shadow-yellow">
+                <feDropShadow dx="3" dy="2" stdDeviation="4" flood-color="#ff0" />
+              </filter>
+            </defs>
             <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
-              <path d="m5 5h5v50h-5" stroke="#0f0"/>
-              <path d="m20 5h20l15 15-15 15h-20v20h5" stroke="#f00"/>
-              <path d="m20 15h15l5 5-5 5h-15" stroke="#00f"/>
-              <path d="m80 55h5v-25h-5" stroke="#0ff"/>
-              <path d="m100 30h-5v25h5" stroke="#ff0"/>
-              <path d="m85 5h-5v15h20v-15h-5" stroke="#f0f"/>
-              <path d="m125 5h5v50h-5" stroke="#f00"/>
-              <path d="m145 5h-5v25l15-15" stroke="#f0f"/>
-              <path d="m145 55h-5v-15l15 15" stroke="#ff0"/>
-              <path d="m175 55h-5l-20-20 20-20h5" stroke="#0f0"/>
-              <path d="m185 20v5h50v-5" stroke="#00f"/>
-              <path d="m185 40v-5h50v5" stroke="#0ff"/>
-              <path d="m295 5h-5v30l-20 20h-25v5" stroke="#0f0"/>
-              <path d="m280 5h-20l-15 15 15 15h15l-10 10h-20v-5" stroke="#f00"/>
-              <path d="m280 15h-15l-5 5 5 5h15" stroke="#00f"/>
+              <path d="m5 5h5v50h-5" stroke="#0f0" style="filter:url(#shadow-green);" />
+              <path d="m20 5h20l15 15-15 15h-20v20h5" stroke="#f00" style="filter:url(#shadow-red);" />
+              <path d="m20 15h15l5 5-5 5h-15" stroke="#00f" style="filter:url(#shadow-blue);" />
+              <path d="m80 55h5v-25h-5" stroke="#0ff" style="filter:url(#shadow-cyan);" />
+              <path d="m100 30h-5v25h5" stroke="#ff0" style="filter:url(#shadow-yellow);" />
+              <path d="m85 5h-5v15h20v-15h-5" stroke="#f0f" style="filter:url(#shadow-magenta);" />
+              <path d="m125 5h5v50h-5" stroke="#f00" style="filter:url(#shadow-red);" />
+              <path d="m145 5h-5v25l15-15" stroke="#f0f" style="filter:url(#shadow-magenta);" />
+              <path d="m145 55h-5v-15l15 15" stroke="#ff0" style="filter:url(#shadow-yellow);" />
+              <path d="m175 55h-5l-20-20 20-20h5" stroke="#0f0" style="filter:url(#shadow-green);" />
+              <path d="m185 20v5h50v-5" stroke="#00f" style="filter:url(#shadow-blue);" />
+              <path d="m185 40v-5h50v5" stroke="#0ff" style="filter:url(#shadow-cyan);" />
+              <path d="m295 5h-5v30l-20 20h-25v5" stroke="#0f0" style="filter:url(#shadow-green);" />
+              <path d="m280 5h-20l-15 15 15 15h15l-10 10h-20v-5" stroke="#f00" style="filter:url(#shadow-red);" />
+              <path d="m280 15h-15l-5 5 5 5h15" stroke="#00f" style="filter:url(#shadow-blue);" />
             </g>
           </svg>
         </div>
