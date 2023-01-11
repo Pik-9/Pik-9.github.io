@@ -50,6 +50,15 @@
         .catch((error) => {
           console.error(error);
         });
+
+        // Copyright notice with current date
+        const cnp = document.getElementById('copyright_notice');
+        if (cnp) {
+          const today = new Date();
+          cnp.innerText = `© ${today.getFullYear()} Daniel Steinhauer`;
+        } else {
+          console.error("Could not find <p> with id 'copyright_notice'.");
+        }
     </script>
 
     <!-- Matomo -->
@@ -333,7 +342,7 @@
     </main>
 
     <footer class="invisibleatstart">
-      <p>&copy; 2021 Daniel Steinhauer</p>
+      <p id="copyright_notice">&copy; Daniel Steinhauer</p>
       <p><a href="https://github.com/Pik-9/Pik-9.github.io">This site is open source</a>.</p>
       <p>Published under the terms of the <a href="https://github.com/Pik-9/Pik-9.github.io/blob/master/LICENSE">AGPLv3</a></p>
     </footer>
