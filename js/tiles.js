@@ -17,7 +17,7 @@ import anime from 'https://cdn.jsdelivr.net/npm/animejs@3/lib/anime.es.js';
  * @param wallId the id (string) which identifies the div in the DOM.
  * @return a promise that resolves, once a tile has been clicked and all animations finished.
  */
-export default function fillWithTiles(wallId) {
+export default function fillWithTiles(wallId, clickCallback) {
   const wall = document.getElementById(wallId);
   const countX = Math.floor(wall.clientWidth / 105.0);
   const countY = Math.ceil(window.innerHeight / 105.0);
@@ -63,6 +63,9 @@ export default function fillWithTiles(wallId) {
   return new Promise((resolve, reject) => {
     tiles.forEach((tile, index) => {
       tile.addEventListener('click', (event) => {
+        if (clickCallback) {
+          clickCallback();
+        }
         glowAnimation.seek(0);
         glowAnimation.pause();
         anime({

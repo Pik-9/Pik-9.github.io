@@ -30,7 +30,12 @@
         buildUpContent,
       } from './js/scroll.js';
 
-      fillWithTiles('brickwall')
+      const clickTileP = document.getElementById('click_tile');
+      const clickTileCB = () => {
+        clickTileP.style.visibility = 'hidden';
+      };
+
+      fillWithTiles('brickwall', clickTileCB)
         .then(() => drawCircuit('#circuitboard'))
         .then(() => buildUpContent())
         .then(() => {
@@ -349,5 +354,7 @@
 
     <div id="brickwall">
     </div>
+
+    <p id="click_tile">Click on a tile</p>
   </body>
 </html>
